@@ -1,19 +1,17 @@
 pipeline {
-   agent {
-      docker { image 'jenkins/jenkins:lts' }
-   }
+   agent any
    stages {
       stage("build") {
          steps {
             echo 'building the application...'
-            sh 'npm install'
-            sh 'npm run build'
+            echo 'npm install'
+            echo 'npm run build'
          }
       }
       stage("test") {
          steps {
             echo 'testing the application...'
-            sh 'npm run test'
+            echo 'npm run test'
          }
       }
       stage("deploy") {
