@@ -8,13 +8,13 @@ pipeline {
          steps {
             echo 'building the application...'
             sh 'npm install'
-            echo 'npm run build'
+            sh 'npm run build'
          }
       }
       stage("test") {
          steps {
             echo 'testing the application...'
-            echo 'npm run test'
+            sh 'npm run test'
          }
       }
       stage("deploy") {
