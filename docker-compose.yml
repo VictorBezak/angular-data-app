@@ -1,0 +1,13 @@
+version: '3'
+services:
+  jenkins:
+    image: jenkins/jenkins:lts
+    ports:
+      - "9999:8080"
+      - "50000:50000"
+    volumes:
+      - ./jenkins_home:/var/jenkins_home
+  frontend:
+    image: angular-app-frontend
+    ports:
+      - "8080:4200"
